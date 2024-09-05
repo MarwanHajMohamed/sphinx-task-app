@@ -1,0 +1,36 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.profile-container img {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgb(0, 0, 0, 0.2);
+}
+
+.profile-container .profile {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--table-border);
+  padding-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.profile .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.form {
+  font-size: 20px;
+  font-weight: 400;
+}

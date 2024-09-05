@@ -56,6 +56,15 @@ tbody tr td {
   border-bottom: 1px solid var(--table-border-light);
 }
 
+tbody tr {
+  cursor: pointer;
+  transition: 50ms ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: rgb(241, 241, 241);
+}
+
 tbody tr:last-child td {
   border-bottom: 0;
 }

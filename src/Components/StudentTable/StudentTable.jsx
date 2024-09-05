@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "./studentTable.css";
 import studentsData from "../../Data/students.json";
 import SearchBar from "../SearchBar/SearchBar";
+import { useNavigate } from "react-router-dom";
 
 export default function StudentTable() {
   const labels = ["Pupil", "Form", "SEND"];
   const [students, setStudents] = useState(studentsData);
   const [sort, setSort] = useState({ key: null, direction: null });
+
+  const navigate = useNavigate();
 
   const sortData = (key) => {
     let direction = "ascending";
@@ -111,7 +114,7 @@ export default function StudentTable() {
         <tbody>
           {students.map((student) => {
             return (
-              <tr>
+              <tr onClick={() => navigate(`/student/${student.id}`)}>
                 <td className="row one">
                   <img src={student.profile_pic} alt="profile_pic" />
                   {student.forename} {student.surname}
