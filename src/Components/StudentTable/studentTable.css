@@ -10,12 +10,17 @@
   border-spacing: 0 0;
   width: 800px;
   border-radius: 10px;
+  table-layout: fixed;
 }
 
 thead th {
   border-bottom: 1px solid var(--table-border);
   padding-left: 10px;
   cursor: pointer;
+}
+
+thead th:first-child {
+  width: 500px;
 }
 
 thead th:last-child {
@@ -36,7 +41,6 @@ thead th:last-child {
 
 .sort i {
   font-size: 14px;
-  color: rgb(199, 199, 199);
 }
 
 .sort i:first-child {
