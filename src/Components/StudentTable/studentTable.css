@@ -9,17 +9,11 @@
   border-collapse: separate;
   border-spacing: 0 0;
   width: 800px;
-  border-radius: 15px;
-}
-
-.students-table-container {
-  display: flex;
-  justify-content: space-between;
+  border-radius: 10px;
 }
 
 thead th {
   border-bottom: 1px solid var(--table-border);
-  border-right: 1px solid var(--table-border);
   padding-left: 10px;
   cursor: pointer;
 }
@@ -40,19 +34,26 @@ thead th:last-child {
   flex-direction: column;
 }
 
-.sort i:first-child {
-  margin-bottom: -8px;
+.sort i {
+  font-size: 14px;
   color: rgb(199, 199, 199);
+}
+
+.sort i:first-child {
+  margin-bottom: -7px;
 }
 
 .sort i:last-child {
-  margin-top: -8px;
-  color: rgb(199, 199, 199);
+  margin-top: -7px;
 }
 
 tbody tr td {
-  padding-left: 10px;
-  padding-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid var(--table-border-light);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 .row.one {

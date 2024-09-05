@@ -1,0 +1,31 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  width: 800px;
+  margin: 20px 0;
+  position: relative;
+  border-radius: 5px;
+  background-color: rgba(225, 225, 225, 0.2);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 5px;
+  outline: 0;
+  background-color: rgba(225, 225, 225, 0.2);
+  font-size: 16px;
+}
+
+.search-bar i {
+  position: absolute;
+  top: 16px;
+  left: 5px;
+  color: rgba(225, 225, 225);
+}

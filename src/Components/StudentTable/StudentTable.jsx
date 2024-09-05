@@ -40,7 +40,7 @@ export default function StudentTable() {
                   ) : (
                     <i
                       class="fa-solid fa-check"
-                      style={{ color: "lightgray" }}
+                      style={{ color: "rgb(232, 232, 232)" }}
                     ></i>
                   )}
                 </td>
