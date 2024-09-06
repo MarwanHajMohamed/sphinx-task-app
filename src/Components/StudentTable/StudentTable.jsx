@@ -3,12 +3,28 @@ import "./studentTable.css";
 import studentsData from "../../Data/students.json";
 import SearchBar from "../SearchBar/SearchBar";
 import { useNavigate } from "react-router-dom";
+import { Pagination } from "../Pagination/Pagination";
 
 export default function StudentTable() {
   const headers = ["Pupil", "Form", "SEND"];
   const [students, setStudents] = useState(studentsData);
 
   const [sort, setSort] = useState({ key: null, direction: null });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 10;
+
+  //
+  const indexOfLastStudent = currentPage * rowsPerPage;
+  const indexOfFirstStudent = indexOfLastStudent - rowsPerPage;
+  const currentStudents = students.slice(
+    indexOfFirstStudent,
+    indexOfLastStudent
+  );
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const navigate = useNavigate();
 
@@ -71,6 +87,7 @@ export default function StudentTable() {
     });
 
     setStudents(filteredStudents);
+    setCurrentPage(1);
   };
 
   return (
@@ -121,10 +138,10 @@ export default function StudentTable() {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => {
+          {currentStudents.map((student) => {
             return (
               <tr onClick={() => navigate(`/student/${student.id}`)}>
-                <td className="row one">
+                <td>
                   <img src={student.profile_pic} alt="profile_pic" />
                   {student.forename} {student.surname}
                 </td>
@@ -144,6 +161,12 @@ export default function StudentTable() {
           })}
         </tbody>
       </table>
+      <Pagination
+        rowsPerPage={rowsPerPage}
+        totalRows={students.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </div>
   );
 }
