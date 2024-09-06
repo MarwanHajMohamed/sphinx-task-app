@@ -5,12 +5,14 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useNavigate } from "react-router-dom";
 
 export default function StudentTable() {
-  const labels = ["Pupil", "Form", "SEND"];
+  const headers = ["Pupil", "Form", "SEND"];
   const [students, setStudents] = useState(studentsData);
+
   const [sort, setSort] = useState({ key: null, direction: null });
 
   const navigate = useNavigate();
 
+  // Function to sort data
   const sortData = (key) => {
     let direction = "ascending";
 
@@ -23,6 +25,7 @@ export default function StudentTable() {
       let nameA = (a.forename + " " + a.surname).toLowerCase();
       let nameB = (b.forename + " " + b.surname).toLowerCase();
 
+      // Sort by pupil name
       if (key === "Pupil") {
         if (nameA < nameB) {
           return direction === "ascending" ? -1 : 1;
@@ -35,14 +38,18 @@ export default function StudentTable() {
         return 0;
       }
 
+      // Sort by form
       if (key === "Form") {
         return direction === "ascending"
           ? a.form.localeCompare(b.form)
           : b.form.localeCompare(a.form);
       }
+
+      // Sort by SEND or not
       if (key === "SEND") {
         return direction === "ascending" ? a.send - b.send : b.send - a.send;
       }
+
       return 0;
     });
 
@@ -50,6 +57,7 @@ export default function StudentTable() {
     setStudents(sortedStudents);
   };
 
+  // Function to search
   const handleSearch = (event) => {
     const value = event.target.value.toLowerCase();
 
@@ -71,34 +79,35 @@ export default function StudentTable() {
       <table>
         <thead>
           <tr>
-            {labels.map((label) => {
+            {headers.map((header) => {
               return (
-                <th key={label} onClick={() => sortData(label)}>
-                  <div className="label-container">
-                    <span>{label}</span>
+                <th key={header} onClick={() => sortData(header)}>
+                  <div className="header-container">
+                    <span>{header}</span>
                     <div className="sort">
                       <i
                         class={`fa-solid fa-sort-up ${
-                          sort.key === label && sort.direction === "ascending"
+                          sort.key === header && sort.direction === "ascending"
                             ? "active-icon"
                             : ""
                         }`}
                         style={{
                           color:
-                            sort.key === label && sort.direction === "ascending"
+                            sort.key === header &&
+                            sort.direction === "ascending"
                               ? "blue"
                               : "rgb(199, 199, 199)",
                         }}
                       ></i>
                       <i
                         class={`fa-solid fa-sort-down ${
-                          sort.key === label && sort.direction === "descending"
+                          sort.key === header && sort.direction === "descending"
                             ? "active-icon"
                             : ""
                         }`}
                         style={{
                           color:
-                            sort.key === label &&
+                            sort.key === header &&
                             sort.direction === "descending"
                               ? "blue"
                               : "rgb(199, 199, 199)",
