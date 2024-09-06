@@ -34,3 +34,47 @@
   font-size: 20px;
   font-weight: 400;
 }
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  max-width: 400px;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.report-card .heading {
+  font-size: 2rem;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(236, 236, 236);
+  border-radius: 10px 10px 0 0;
+}
+
+.grades {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.grades span {
+  font-weight: 400;
+}
+
+.grades div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--table-border-light);
+  padding: 15px 10px;
+}
+
+.grades div:nth-child(2n) {
+  background-color: rgb(250, 250, 250);
+}
+
+.grades div:last-child {
+  border-radius: 0 0 10px 10px;
+}

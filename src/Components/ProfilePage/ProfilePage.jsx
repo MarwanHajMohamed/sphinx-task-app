@@ -33,6 +33,40 @@ export default function ProfilePage() {
         iure vel dolorem quod quibusdam repudiandae sunt. Itaque,
         exercitationem! Possimus, eos architecto.
       </div>
+      <div className="report-card">
+        <div className="heading">Report Card</div>
+        {student.grades.map((grade) => {
+          return (
+            <div className="grades">
+              <div>
+                English: <span>{grade.english}</span>
+              </div>
+              <div>
+                Maths: <span>{grade.maths}</span>
+              </div>
+              <div>
+                Science:
+                <span>{grade.science}</span>
+              </div>
+              <div>
+                Computer Science: <span>{grade.computer_science}</span>
+              </div>
+              <div>
+                History: <span>{grade.history}</span>
+              </div>
+              <div>
+                Religious Studies: <span>{grade.religious_studies}</span>
+              </div>
+              <div>
+                Spanish: <span>{grade.spanish}</span>
+              </div>
+              <div>
+                Physical Education: <span>{grade.physical_education}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
