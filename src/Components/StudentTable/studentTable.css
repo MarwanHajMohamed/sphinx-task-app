@@ -61,8 +61,12 @@ tbody tr {
   transition: 50ms ease-in-out;
 }
 
+tbody tr:nth-child(2n) {
+  background-color: rgb(250, 250, 250);
+}
+
 tbody tr:hover {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(240, 240, 240);
 }
 
 tbody tr:last-child td {
