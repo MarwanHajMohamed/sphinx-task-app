@@ -17,21 +17,24 @@ thead th {
   border-bottom: 1px solid var(--table-border);
   padding-left: 10px;
   cursor: pointer;
+  background-color: rgb(236, 236, 236);
 }
 
 thead th:first-child {
   width: 500px;
+  border-radius: 10px 0 0 0;
 }
 
 thead th:last-child {
   border-right: 0;
+  border-radius: 0 10px 0 0;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .sort {

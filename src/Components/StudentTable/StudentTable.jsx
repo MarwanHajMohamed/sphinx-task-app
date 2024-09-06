@@ -96,7 +96,7 @@ export default function StudentTable() {
                             sort.key === header &&
                             sort.direction === "ascending"
                               ? "blue"
-                              : "rgb(199, 199, 199)",
+                              : "rgb(179, 179, 179)",
                         }}
                       ></i>
                       <i
@@ -110,7 +110,7 @@ export default function StudentTable() {
                             sort.key === header &&
                             sort.direction === "descending"
                               ? "blue"
-                              : "rgb(199, 199, 199)",
+                              : "rgb(179, 179, 179)",
                         }}
                       ></i>
                     </div>
