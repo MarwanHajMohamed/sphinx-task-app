@@ -14,7 +14,7 @@ export default function StudentTable() {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
 
-  //
+  // Get students to display per page
   const indexOfLastStudent = currentPage * rowsPerPage;
   const indexOfFirstStudent = indexOfLastStudent - rowsPerPage;
   const currentStudents = students.slice(
@@ -22,6 +22,7 @@ export default function StudentTable() {
     indexOfLastStudent
   );
 
+  // Function to change pages
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
